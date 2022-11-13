@@ -24,13 +24,13 @@ class CatsController < ApplicationController
   def update
     @cat = Cat.find(params[:id])
     @cat.update(cat_params)
-    redirect_to cat_path(@cat), notice: '更新に成功しました。'
+    redirect_to cat_path(@cat), notice: 'データを更新しました。'
   end
 
   def destroy
     cat = Cat.find(params[:id])
     cat.destroy
-    redirect_to cats_path(@cat)
+    redirect_to cats_path(@cat), notice: 'データを削除しました。'
   end
 
   private
