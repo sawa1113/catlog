@@ -7,8 +7,8 @@
 <section class="section">
   <div class="container">
     <h2 class="section-title">にゃんこデータ一覧</h2>
-    <div class="row">
-      <div class="col d-flex pt-5">
+    <div class="card-box">
+      <div class="col df pt-5">
         <% @cats.each do |cat| %>
           <div class="col-md-4 p-2">
             <div class="card">
@@ -27,7 +27,7 @@
                       <%# <td><%=link_to cat.user.username, user_path(cat.user) %></td> %>
                     </tr>
                   </table>
-                  <div class="d-flex">
+                  <div class="button-position">
                     <%= link_to "詳細を見る" ,cat_path(cat), class: 'btn btn-success' %>
                     <%= link_to '削除', cat, method: :delete, data: {confirm: "投稿を削除します。よろしいですか？"},class: 'btn btn-danger' %>
                   </div>
