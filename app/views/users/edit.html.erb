@@ -1,0 +1,42 @@
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <h2 class="section-title">ユーザーデータ編集</h2>
+      <div class="regist_form">
+      <% if @user.errors.any? %>
+        <div class="notification is-danger">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= form_for @user do |f| %>
+        <div class="form-group p-2 m-2">
+          <%= f.label :username, "ユーザー名", class: "label" %>
+          <%= f.text_field :username, class: "input" %>
+        </div>
+
+        <div class="form-group p-2 m-2">
+          <%= f.label :email, "メールアドレス", class: "label" %>
+          <%= f.email_field :email, class: "input" %>
+        </div>
+
+        <div class="form-group p-2 m-2">
+          <%= f.label :profile, "プロフィール", class: "label" %>
+          <%= f.text_area :profile, class: "textarea" %>
+        </div>
+
+        <div class="form-group p-2 m-2">
+          <%= f.label :profile_image, "プロフィール画像", class: "label" %>
+          <%= f.file_field :profile_image, class: "input" %>
+        </div>
+
+        <%= f.submit "更新", class: "button is-success" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">猫グラファ一覧</h2>
+    <div class="columns df">
+      <div>
+        <% if @user.profile_image_id? %>
+          <img src='<%= post.user.profile_image %>' class="show-icon" alt="ユーザーアイコン1">
+        <% else %>
+          <img src="/assets/default.png" class="show-icon" alt="ユーザーアイコン2" %>
+        <% end %>
+      </div>
+      <div>
+        <table class="table">
+          <tr>
+            <td>
+              <%= @user.username %>
+            </td>
+            <% if @user.id == current_user.id %>
+            <td>
+              <%= @user.email %>
+            </td>
+            <td>
+                <%= link_to "編集", edit_user_path(@user), class: "button is-primary" %>
+            </td>
+            <% end %>
+          </tr>
+        </table>
+        <table class="table">
+          <tr>
+            <td>
+              <%= @user.profile %>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
