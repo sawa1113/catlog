@@ -35,14 +35,14 @@ section {
   }
 }
 
-.cat_form {
+.regist_form {
   width: 800px;
   max-width: 100%;
   padding: 60px;
 }
 
 @media screen and (max-width:768px) {
-  .cat_form {
+  .regist_form {
     padding: 20px;
   }
 }
@@ -101,4 +101,25 @@ section {
 
 .alert-alert {
   @extend .alert-danger;
+}
+
+.card-content {
+  background-color: transparent;
+  padding: 1.5rem;
+}
+
+.card .media:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  color: #363636;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.125;
+}
+
+.show-icon {
+  max-width: 100%;
+  height: 128px;
 }
