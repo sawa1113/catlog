@@ -1,0 +1,36 @@
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">猫グラファ一覧</h2>
+    <div class="card-box">
+      <div class="col df pt-5">
+        <% @users.each do |user| %>
+          <div class="column is-3">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-image">
+                  <%= link_to user_path(user) do %>
+                    <% if user.profile_image_id? %>
+                      <img src='<%= user.profile_image_id %>' class="icon" alt="ユーザーアイコン1">
+                    <% else %>
+                      <img src="/assets/default.png" class="icon" alt="ユーザーアイコン2" %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <div class="title"><%=link_to user.username, user_path(user) %></div>
+                  </div>
+                </div>
+                <div class="content">
+                  投稿数：
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
