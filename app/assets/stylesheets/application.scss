@@ -1,4 +1,9 @@
 @import "bootstrap";
+@import "signup";
+
+body {
+  background-color: #ECECEC;
+}
 
 img {
   max-width: 100%;
@@ -78,4 +83,22 @@ section {
 .side-position {
   display: flex;
   gap: 10px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.container-login {
+  @extend .container-fluid;
+  max-width: 576px;
+  padding: 2rem;
+}
+
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
 }
