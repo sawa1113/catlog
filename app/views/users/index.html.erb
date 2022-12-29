@@ -10,7 +10,7 @@
                 <div class="card-image">
                   <%= link_to user_path(user) do %>
                     <% if user.profile_image_id? %>
-                      <img src='<%= post.user.profile_image %>' class="icon" alt="ユーザーアイコン1">
+                      <img src='<%= user.profile_image_id %>' class="icon" alt="ユーザーアイコン1">
                     <% else %>
                       <img src="/assets/default.png" class="icon" alt="ユーザーアイコン2" %>
                     <% end %>
