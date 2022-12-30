@@ -1,9 +1,3 @@
-<%# <section class="section">
-  <div class="container">
-    <h2 class="section-title">にゃんこデータ一覧</h2><h1>
-  </div>
-</section> %>
-
 <section class="section">
   <div class="container">
     <h2 class="section-title">にゃんこデータ一覧</h2>
@@ -16,21 +10,20 @@
                 <%= link_to image_tag cat.image_id.to_s, width: '100%', height: '100%' %>
               </div>
               <div class="card-body">
-                <h4 class="card-title"><%= cat.catname %></h4>
-                <div class="content">
-                  <table class="table">
-                    <tr>
-                      <th>アピールポイント</th>
-                    </tr>
-                    <tr>
-                      <td><%= simple_format cat.appeal_point %></td>
-                      <%# <td><%=link_to cat.user.username, user_path(cat.user) %></td> %>
-                    </tr>
-                  </table>
-                  <div class="button-position">
-                    <%= link_to "詳細を見る" ,cat_path(cat), class: 'btn btn-success' %>
-                    <%= link_to '削除', cat, method: :delete, data: {confirm: "投稿を削除します。よろしいですか？"},class: 'btn btn-danger' %>
+                <div class="card-content df gap20">
+                  <div class="card-image">
+                    <% if cat.user.profile_image_id? %>
+                      <img src='<%= cat.user.profile_image_id %>' class="user-icon gap20" alt="ユーザーアイコン1">
+                    <% else %>
+                      <img src="/assets/default.png" class="user-icon gap20" alt="ユーザーアイコン2" %>
+                    <% end %>
                   </div>
+                  <div class="media-content">
+                    <div class="title"><%=link_to cat.user.username, user_path(cat.user) %></div>
+                  </div>
+                </div>
+                <div class="panel-block">
+                  <%= cat.updated_at.strftime("%Y-%m-%d %H:%M") %>更新
                 </div>
               </div>
             </div>
