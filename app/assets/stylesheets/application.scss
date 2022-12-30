@@ -31,7 +31,7 @@ section {
 
 @media screen and (max-width:768px) {
   .section-title {
-    font-size: 34px;
+    font-size: 24px;
   }
 }
 
@@ -158,4 +158,46 @@ section {
   justify-content: flex-start;
   padding: 0.5em 0.75em;
   border-radius: 0 0 6px 6px;
+}
+
+.cat-content {
+  display: grid;
+}
+
+.panel-block {
+  align-items: center;
+  color: #363636;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5em 0.75em;
+}
+
+.cat-img {
+  object-fit: cover;
+  height: 450px;
+  width: 450px;
+
+  @media screen and (max-width:768px) {
+    height: 360px;
+    width: 360px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .change-prof-btn1 {
+    display: none;
+  }
+}
+
+.change-prof-btn2 {
+  display: none;
+
+  @media screen and (max-width:768px) {
+    display: block;
+  }
+}
+
+.but-position {
+  display: flex;
+  gap: 10px;
 }

@@ -1,4 +1,4 @@
-<section class="section">
+<section>
   <div class="container">
     <div class="row justify-content-center">
       <h2 class="section-title">猫グラファ一覧</h2>
@@ -20,10 +20,10 @@
               <td>
                 <%= @user.email %>
               </td>
-              <td>
+              <td class="change-prof-btn1">
                   <%= link_to "編集", edit_user_path(@user), class: "btn btn-success" %>
               </td>
-              <td>
+              <td class="change-prof-btn1">
                   <%= button_to "一覧へ戻る", { :action => "index" }, :method => "get", class: "btn btn-success" %>
               </td>
               <% end %>
@@ -36,8 +36,57 @@
               </td>
             </tr>
           </table>
+          <div class="but-position">
+            <% if @user.id == current_user.id %>
+            <div class="change-prof-btn2">
+                <%= link_to "編集", edit_user_path(@user), class: "btn btn-success" %>
+            </div>
+            <div class="change-prof-btn2">
+                <%= button_to "一覧へ戻る", { :action => "index" }, :method => "get", class: "btn btn-success" %>
+            </div>
+            <% end %>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">これまでに撮影した猫たち</h2>
+    <div class="col df">
+      <% @user.cats.each do |cat| %>
+        <div class="card m-4">
+          <div>
+            <div class="user-cat-img">
+              <%= link_to cat_path(cat) do %>
+                <img src='<%= cat.image_id %>' class="cat-img" alt="にゃんこ画像">
+              <% end %>
+            </div>
+          </div>
+          <div class="user-cat-profile">
+            <div class="media">
+              <div class="cat-content">
+                <%= link_to cat_path(cat), class: "panel-block" do %>
+                  にゃんこのプロフィールを見てみよう！
+                <% end %>
+                <% if @user.id == current_user.id %>
+                  <%= link_to edit_cat_path(cat), class: "panel-block" do %>
+                    にゃんこのプロフィールを編集しよう！
+                  <% end %>
+                  <%= link_to cat_path(cat), method: :delete, data: {confirm: "削除しますか？"}, class: "panel-block" do %>
+                    にゃんこプロフィールを削除する
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+            <div class="panel-block">
+              <%= cat.updated_at.strftime("%Y-%m-%d %H:%M") %>更新
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>
