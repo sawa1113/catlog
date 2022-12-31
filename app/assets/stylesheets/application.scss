@@ -31,7 +31,7 @@ section {
 
 @media screen and (max-width:768px) {
   .section-title {
-    font-size: 34px;
+    font-size: 24px;
   }
 }
 
@@ -122,4 +122,92 @@ section {
 .show-icon {
   max-width: 100%;
   height: 128px;
+}
+
+.user-panel {
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  font-size: 1rem;
+}
+
+.user-panel-heading {
+  background-color: #48c774;
+  color: #fff;
+  border-radius: 6px 6px 0 0;
+  color: #363636;
+  font-size: 1.25em;
+  font-weight: 700;
+  line-height: 1.25;
+  padding: 0.75em 1em;
+}
+
+.user-panel-block {
+  align-items: center;
+  background-color: #ededed;
+  color: #363636;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5em 0.75em;
+}
+
+.user-panel-block2 {
+  align-items: center;
+  background-color: #ededed;
+  color: #363636;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5em 0.75em;
+  border-radius: 0 0 6px 6px;
+}
+
+.cat-content {
+  display: grid;
+}
+
+.panel-block {
+  align-items: center;
+  color: #363636;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5em 0.75em;
+}
+
+.cat-img {
+  object-fit: cover;
+  height: 450px;
+  width: 450px;
+
+  @media screen and (max-width:768px) {
+    height: 360px;
+    width: 360px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .change-prof-btn1 {
+    display: none;
+  }
+}
+
+.change-prof-btn2 {
+  display: none;
+
+  @media screen and (max-width:768px) {
+    display: block;
+  }
+}
+
+.but-position {
+  display: flex;
+  gap: 10px;
+}
+
+.user-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.gap20 {
+  gap: 20px;
 }

@@ -12,7 +12,7 @@
                     <% if user.profile_image_id? %>
                       <img src='<%= user.profile_image_id %>' class="icon" alt="ユーザーアイコン1">
                     <% else %>
-                      <img src="/assets/default.png" class="icon" alt="ユーザーアイコン2" %>
+                      <img src="/assets/default.png" class="cat-img" alt="ユーザーアイコン2" %>
                     <% end %>
                   <% end %>
                 </div>
@@ -24,7 +24,7 @@
                   </div>
                 </div>
                 <div class="content">
-                  投稿数：
+                  投稿数：<%= user.cats.count %>
                 </div>
               </div>
             </div>
