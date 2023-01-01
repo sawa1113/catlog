@@ -59,6 +59,10 @@ section {
   }
 }
 
+.df-f {
+  display: flex;
+}
+
 .card-box {
   padding: 40px;
 }
@@ -174,13 +178,8 @@ section {
 
 .cat-img {
   object-fit: cover;
-  height: 450px;
-  width: 450px;
-
-  @media screen and (max-width:768px) {
-    height: 360px;
-    width: 360px;
-  }
+  height: 400px;
+  width: 400px;
 }
 
 @media screen and (max-width:768px) {
