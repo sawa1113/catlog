@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_13_145027) do
+ActiveRecord::Schema.define(version: 2023_01_01_132413) do
 
   create_table "cats", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "catname"
-    t.text "appeal_point"
-    t.string "image_id"
+    t.integer "user_id", null: false
+    t.string "catname", null: false
+    t.text "appeal_point", null: false
+    t.string "image_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
