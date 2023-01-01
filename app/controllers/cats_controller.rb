@@ -1,4 +1,5 @@
 class CatsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   def index
     @cats = Cat.all
   end
@@ -12,19 +13,28 @@ class CatsController < ApplicationController
   end
 
   def create
-    @cat = Cat.new(cat_params)
-    @cat.save
-    redirect_to cat_path(@cat), notice: '投稿に成功しました。'
+    @cat = current_user.cats.build(cat_params)
+    if @cat.save
+      redirect_to cat_path(@cat), notice: "投稿に成功しました。"
+    else
+      render :new
+    end
   end
 
   def edit
     @cat = Cat.find(params[:id])
+    if @cat.user != current_user
+      redirect_to cats_path, alert: "不正なアクセスです。"
+    end
   end
 
   def update
     @cat = Cat.find(params[:id])
-    @cat.update(cat_params)
-    redirect_to cat_path(@cat), notice: 'データを更新しました。'
+    if @cat.update(cat_params)
+      redirect_to cat_path(@cat), notice: 'データを更新しました。'
+    else
+      render :edit
+    end
   end
 
   def destroy
