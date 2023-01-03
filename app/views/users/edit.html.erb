@@ -4,8 +4,8 @@
       <h2 class="section-title">ユーザーデータ編集</h2>
       <div class="regist_form">
       <% if @user.errors.any? %>
-        <div class="notification is-danger">
-          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+        <div class="devise-sign-up-error">
+          <h2><%= t("errors.template.header", model: User.model_name.human, count: @user.errors.count) %></h2>
           <ul>
             <% @user.errors.full_messages.each do |message| %>
             <li><%= message %></li>
