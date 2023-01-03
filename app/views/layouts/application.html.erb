@@ -13,13 +13,13 @@
 
   <body>
     <% if flash[:notice] %>
-      <div class="notification is-info">
+      <div class="devise-notice">
         <p class="notice"><%= notice %></p>
       </div>
     <% end %>
 
     <% if flash[:alert] %>
-      <div class="notification is-danger devise-error">
+      <div class="devise-error">
         <p class="alert"><%= alert %></p>
       </div>
     <% end %>
