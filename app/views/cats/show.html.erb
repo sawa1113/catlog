@@ -19,8 +19,8 @@
                 </table>
                 <div class="button-position">
                   <div class="side-position">
-                    <%= link_to "編集", edit_cat_path(@cat), class: "btn btn-success" %>
-                    <%= button_to "一覧へ戻る", { :action => "index" }, :method => "get", class: "btn btn-success" %>
+                    <%= link_to "編集", edit_cat_path(@cat), class: "btn btn-warning" %>
+                    <%= button_to "一覧へ戻る", { :action => "index" }, :method => "get", class: "btn btn-warning" %>
                   </div>
                   <div>
                     <%= link_to '削除', cat_path(@cat), method: :delete, data: {confirm: "投稿を削除します。よろしいですか？"},class: 'btn btn-danger' %>

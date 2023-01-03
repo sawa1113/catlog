@@ -1,13 +1,13 @@
 <section>
   <div class="container">
     <div class="row justify-content-center">
-      <h2 class="section-title">猫グラファ一覧</h2>
+      <h2 class="section-title">マイページ</h2>
       <div class="regist_form df">
         <div>
           <% if @user.profile_image_id? %>
-            <img src='<%= @user.profile_image_id %>' class="show-icon" alt="ユーザーアイコン1">
+            <img src='<%= @user.profile_image_id %>' class="show-icon" alt="ユーザー画像">
           <% else %>
-            <img src="/assets/default.png" class="show-icon" alt="ユーザーアイコン2" %>
+            <img src="/assets/default.png" class="show-icon" alt="サンプル画像" %>
           <% end %>
         </div>
         <div>
@@ -21,10 +21,10 @@
                 <%= @user.email %>
               </td>
               <td class="change-prof-btn1">
-                  <%= link_to "編集", edit_user_path(@user), class: "btn btn-success" %>
+                  <%= link_to "編集", edit_user_path(@user), class: "btn btn-warning" %>
               </td>
               <td class="change-prof-btn1">
-                  <%= button_to "一覧へ戻る", { :action => "index" }, :method => "get", class: "btn btn-success" %>
+                  <%= button_to "一覧へ戻る", { :action => "index" }, :method => "get", class: "btn btn-warning" %>
               </td>
               <% end %>
             </tr>
@@ -39,10 +39,10 @@
           <div class="but-position">
             <% if @user.id == current_user.id %>
             <div class="change-prof-btn2">
-                <%= link_to "編集", edit_user_path(@user), class: "btn btn-success" %>
+                <%= link_to "編集", edit_user_path(@user), class: "btn btn-warning" %>
             </div>
             <div class="change-prof-btn2">
-                <%= button_to "一覧へ戻る", { :action => "index" }, :method => "get", class: "btn btn-success" %>
+                <%= button_to "一覧へ戻る", { :action => "index" }, :method => "get", class: "btn btn-warning" %>
             </div>
             <% end %>
           </div>
