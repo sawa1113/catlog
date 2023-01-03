@@ -226,3 +226,58 @@ section {
     padding: 15px 0 0 0;
   }
 }
+
+.devise-error {
+  background-color: #FF0000;
+  color: #242424;
+  font-weight: 700;
+  padding: 0.75rem 1.25rem 0.15rem;
+}
+
+.devise-sign-up-error {
+  color: #FF0000;
+  font-weight: 700;
+}
+
+.btn-width {
+  width: 100%;
+}
+
+.btn-width:not(:first-child) {
+  margin-bottom: 20px;
+}
+
+.main-title {
+  text-align: center;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .main-title {
+    font-size: 20px;
+  }
+}
+
+.title-font {
+  font-size: 45px;
+}
+
+@media screen and (max-width: 768px) {
+  .title-font {
+    font-size: 35px;
+  }
+}
+
+.main-img {
+  height: 600px;
+  background-image: image-url('cat-top-img.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+@media screen and (max-width: 768px) {
+  .main-img {
+    height: 230px;
+  }
+}
