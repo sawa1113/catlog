@@ -226,3 +226,15 @@ section {
     padding: 15px 0 0 0;
   }
 }
+
+.devise-error {
+  background-color: #FF0000;
+  color: #242424;
+  font-weight: 700;
+  padding: 0.75rem 1.25rem 0.15rem;
+}
+
+.devise-sign-up-error {
+  color: #FF0000;
+  font-weight: 700;
+}
