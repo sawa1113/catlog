@@ -23,6 +23,18 @@
                   <div class="media-content">
                     <div class="title"><%=link_to cat.user.username, user_path(cat.user) %></div>
                   </div>
+                  <div class="mt-10">
+                    <% if current_user.already_favorited?(cat) %>
+                      <%= link_to cat_favorites_path(cat), method: :delete do %>
+                          <i class="fas fa-heart"></i>
+                      <% end %>
+                    <% else %>
+                      <%= link_to cat_favorites_path(cat), method: :post do %>
+                          <i class="fas fa-heart"></i>
+                      <% end %>
+                    <% end %>
+                    <%= cat.favorites.count %>
+                  </div>
                 </div>
                 <div class="panel-block">
                   <%= cat.updated_at.strftime("%Y-%m-%d %H:%M") %>更新

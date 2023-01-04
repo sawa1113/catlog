@@ -18,6 +18,12 @@ section {
   padding: 88px 0 120px 0;
 }
 
+@media screen and (max-width: 768px) {
+  section {
+    padding: 44px 0 40px 0;
+  }
+}
+
 .container {
   width: 1200px;
   max-width: 100%;
@@ -227,6 +233,13 @@ section {
   }
 }
 
+.devise-notice {
+  background-color: #48c774;
+  color: #242424;
+  font-weight: 700;
+  padding: 0.75rem 1.25rem 0.15rem;
+}
+
 .devise-error {
   background-color: #FF0000;
   color: #242424;
@@ -280,4 +293,8 @@ section {
   .main-img {
     height: 230px;
   }
+}
+
+.mt-10 {
+  margin-top: 10px;
 }

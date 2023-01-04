@@ -1,3 +1,13 @@
+      <% if @cat.errors.any? %>
+        <div class="devise-sign-up-error">
+          <h2><%= t("errors.template.header", model: Cat.model_name.human, count: @cat.errors.count) %></h2>
+          <ul>
+            <% @cat.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
       <%= form_for @cat do |f| %>
         <div class="form-group p-2 m-2">
           <%= f.label :catname %>
