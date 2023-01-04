@@ -18,6 +18,12 @@ section {
   padding: 88px 0 120px 0;
 }
 
+@media screen and (max-width: 768px) {
+  section {
+    padding: 44px 0 40px 0;
+  }
+}
+
 .container {
   width: 1200px;
   max-width: 100%;
@@ -287,4 +293,8 @@ section {
   .main-img {
     height: 230px;
   }
+}
+
+.mt-10 {
+  margin-top: 10px;
 }
