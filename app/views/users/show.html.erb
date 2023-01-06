@@ -23,10 +23,10 @@
               <td class="change-prof-btn1">
                   <%= link_to "編集", edit_user_path(@user), class: "btn btn-warning" %>
               </td>
-              <td class="change-prof-btn1">
-                  <%= button_to "一覧へ戻る", { :action => "index" }, :method => "get", class: "btn btn-warning" %>
-              </td>
               <% end %>
+              <td class="change-prof-btn1">
+                <%= button_to "一覧へ戻る", { :action => "index" }, :method => "get", class: "btn btn-warning" %>
+              </td>
             </tr>
           </table>
           <table class="table">
@@ -41,10 +41,10 @@
             <div class="change-prof-btn2">
                 <%= link_to "編集", edit_user_path(@user), class: "btn btn-warning" %>
             </div>
-            <div class="change-prof-btn2">
-                <%= button_to "一覧へ戻る", { :action => "index" }, :method => "get", class: "btn btn-warning" %>
-            </div>
             <% end %>
+            <div class="change-prof-btn2">
+              <%= button_to "一覧へ戻る", { :action => "index" }, :method => "get", class: "btn btn-warning" %>
+            </div>
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@
 
 <section>
   <div class="container">
-    <h2 class="section-title">これまでに撮影した猫たち</h2>
+    <h2 class="section-title">これまで撮ったにゃんこたち</h2>
     <div class="col df">
       <% @user.cats.each do |cat| %>
         <div class="card m-4">
@@ -69,14 +69,14 @@
             <div class="media">
               <div class="cat-content">
                 <%= link_to cat_path(cat), class: "panel-block" do %>
-                  にゃんこのプロフィールを見てみよう！
+                  プロフィールはこちら！
                 <% end %>
                 <% if @user.id == current_user.id %>
                   <%= link_to edit_cat_path(cat), class: "panel-block" do %>
-                    にゃんこのプロフィールを編集しよう！
+                    プロフィールの編集はこちら！
                   <% end %>
                   <%= link_to cat_path(cat), method: :delete, data: {confirm: "削除しますか？"}, class: "panel-block" do %>
-                    にゃんこプロフィールを削除する
+                    プロフィールを削除はこちら！
                   <% end %>
                 <% end %>
               </div>

@@ -1,10 +1,10 @@
-<section class="section">
+<section>
   <div class="container">
     <h2 class="section-title">にゃんこデータ一覧</h2>
     <div class="card-box">
-      <div class="col df pt-5">
+      <div class="card-container col df">
         <% @cats.each do |cat| %>
-          <div class="col-md-4 p-2">
+          <div class="card-item col-md-6 p-2">
             <div class="card">
               <div class="card-img">
                 <%= link_to cat_path(cat) do %>
@@ -21,10 +21,10 @@
                     <% end %>
                   </div>
                   <div class="media-content">
-                    <div class="title"><%=link_to cat.user.username, user_path(cat.user) %></div>
+                    <div class="title mt-10"><%=link_to cat.user.username, user_path(cat.user) %></div>
                   </div>
                   <div class="mt-10">
-                    <% if current_user.already_favorited?(cat) %>
+                    <% if user_signed_in? %>
                       <%= link_to cat_favorites_path(cat), method: :delete do %>
                           <i class="fas fa-heart"></i>
                       <% end %>
