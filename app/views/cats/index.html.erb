@@ -17,7 +17,9 @@
                     <% if cat.user.profile_image_id? %>
                       <img src='<%= cat.user.profile_image_id %>' class="user-icon gap20" alt="ユーザー画像">
                     <% else %>
-                      <%= image_tag asset_path("default.png", alt: "ユーザー画像") %>
+                      <div class="user-icon gap20">
+                        <%= image_tag asset_path("default.png", alt: "ユーザー画像") %>
+                      </div>
                     <% end %>
                   </div>
                   <div class="media-content">
