@@ -7,7 +7,7 @@
           <% if @user.profile_image_id? %>
             <img src='<%= @user.profile_image_id %>' class="show-icon" alt="ユーザー画像">
           <% else %>
-            <img src="/assets/default.png" class="show-icon" alt="サンプル画像" %>
+            <%= image_tag asset_path("default.png", alt: "ユーザー画像") %>
           <% end %>
         </div>
         <div>
