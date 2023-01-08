@@ -12,7 +12,7 @@
                     <% if user.profile_image_id? %>
                       <img src='<%= user.profile_image_id %>' class="icon" alt="ユーザー画像">
                     <% else %>
-                      <img src="/assets/default.png" class="cat-img" alt="ユーザー画像" %>
+                      <%= image_tag asset_path("default.png", alt: "ユーザー画像") %>
                     <% end %>
                   <% end %>
                 </div>
