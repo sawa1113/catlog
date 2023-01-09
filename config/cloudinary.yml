@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: he8hmxulv
+  api_key: '494299392869693'
+  api_secret: 1AUTqXK9InUSoO9mBtoCaU6MqOo
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: he8hmxulv
+  api_key: '494299392869693'
+  api_secret: 1AUTqXK9InUSoO9mBtoCaU6MqOo
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: he8hmxulv
+  api_key: '494299392869693'
+  api_secret: 1AUTqXK9InUSoO9mBtoCaU6MqOo
+  enhance_image_tag: true
+  static_file_support: false
